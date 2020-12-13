@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="main_pane_anchor" fx:id="main_pane" maxHeight="910" maxWidth="910" minHeight="910" minWidth="910" prefHeight="910.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <ImageView fx:id="background" fitHeight="910.0" fitWidth="910.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
+            <image>
+                <Image url="@../resources/game_background.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_1" fitHeight="105.0" fitWidth="105.0" layoutX="180.0" layoutY="203.0" onMouseClicked="#build1" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_2" fitHeight="120.0" fitWidth="120.0" layoutX="680.0" layoutY="206.0" onMouseClicked="#build2" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_3" fitHeight="144.0" fitWidth="144.0" layoutX="65.0" layoutY="345.0" onMouseClicked="#build3" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_4" fitHeight="170.0" fitWidth="170.0" layoutX="310.0" layoutY="380.0" onMouseClicked="#build4" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_5" fitHeight="140.0" fitWidth="140.0" layoutX="550.0" layoutY="345.0" onMouseClicked="#build5" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_6" fitHeight="205.0" fitWidth="205.0" layoutX="10.0" layoutY="503.0" onMouseClicked="#build6" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_7" fitHeight="270.0" fitWidth="270.0" layoutX="223.0" layoutY="616.0" onMouseClicked="#build7" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_8" fitHeight="220.0" fitWidth="224.0" layoutX="510.0" layoutY="561.0" onMouseClicked="#build8" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="building_9" fitHeight="170.0" fitWidth="170.0" layoutX="703.0" layoutY="391.0" onMouseClicked="#build9" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/blank.png" />
+            </image>
+        </ImageView>
+      <Label fx:id="gold" layoutX="673.0" layoutY="30.0" text="GOLD: " textFill="#ffce00">
+         <font>
+            <Font name="Californian FB Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="cash" layoutX="755.0" layoutY="30.0" prefWidth="105.0" text="200000" textFill="#ffce00">
+         <font>
+            <Font name="Californian FB Bold" size="25.0" />
+         </font>
+      </Label>
+
+    </children>
+</AnchorPane>

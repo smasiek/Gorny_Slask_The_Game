@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <Button fx:id="errorButton" layoutX="133.0" layoutY="145.0" mnemonicParsing="false" prefHeight="41.0"
+                prefWidth="135.0" text="Ok"/>
+        <Label fx:id="errorText" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="29.0"
+               prefHeight="101.0" prefWidth="321.0" text="Test" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="Arial" size="18.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
