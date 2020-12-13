@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import sample.MementoPattern.Caretaker;
+import sample.MementoPattern.Originator;
 import sample.buildings.*;
 
 import java.io.IOException;
@@ -45,6 +47,9 @@ public class Controller implements Initializable {
     //Error dialog
     public Label errorText;
     public Button errorButton;
+
+    private Caretaker caretaker;
+    private Originator originator;
 
     //2nd lvl buildings
     private boolean conditionsMet = false;
@@ -87,7 +92,7 @@ public class Controller implements Initializable {
 
     public void handlePlusClick(int buildingNumber) {
         if (buildings.get(buildingNumber - 1).getImage() instanceof Building) {
-            errorDialog("Nie można tu już budować!");
+            errorDialog("Niy idzie sam już budować!");
         } else {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("dialog.fxml"));
@@ -126,7 +131,7 @@ public class Controller implements Initializable {
                         lumbermill.build(cash);
                         buildingConstruction(lumbermill, buildingNumber, dialogStage);
                     } else {
-                        errorDialog("Budynek dostępny po kupieniu Kamieniołomu, Mini Tartaka i Chaty drwala");
+                        errorDialog("Budōnek dostympny po kupiyniu Kamieniołomu, Mini Tartaka i Chałpy siōngŏrza");
                     }
                 });
 
@@ -138,7 +143,7 @@ public class Controller implements Initializable {
                         buildingConstruction(goldmine, buildingNumber, dialogStage);
 
                     } else {
-                        errorDialog("Budynek dostępny po kupieniu Kamieniołomu, Mini Tartaka i Chaty drwala");
+                        errorDialog("Budōnek dostympny po kupiyniu Kamieniołomu, Mini Tartaka i Chałpy siōngŏrza");
                     }
                 });
 
@@ -149,7 +154,7 @@ public class Controller implements Initializable {
                         mint.build(cash);
                         buildingConstruction(mint, buildingNumber, dialogStage);
                     } else {
-                        errorDialog("Budynek dostępny po kupieniu Kamieniołomu, Mini Tartaka i Chaty drwala");
+                        errorDialog("Budōnek dostympny po kupiyniu Kamieniołomu, Mini Tartaka i Chałpy siōngŏrza");
                     }
                 });
 
@@ -180,6 +185,8 @@ public class Controller implements Initializable {
         buildings.add(building_7);
         buildings.add(building_8);
         buildings.add(building_9);
+        originator=new Originator();
+        caretaker=new Caretaker();
     }
 
     public void buildingConstruction(Building image, int buildingNumber, Stage dialogStage) {
@@ -189,7 +196,9 @@ public class Controller implements Initializable {
                     buildings.get(i).setImage(image);
                     buildings.get(i).setOpacity(1);
                     dialogStage.close();
-                    conditionsMet=areConditionsMet();
+                    originator.set(image);
+                    caretaker.addMemento(originator.storeInMemento());
+                    conditionsMet=originator.areConditionsMet(caretaker.getMementos());
                 }
             }
         } else {
@@ -202,7 +211,7 @@ public class Controller implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("error_dialog.fxml"));
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Error");
+            dialogStage.setTitle("Błōnd");
 
             Label text = (Label) root.lookup("#errorText");
             text.setText(errorMessage);

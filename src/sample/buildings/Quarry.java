@@ -1,6 +1,5 @@
 package sample.buildings;
 
-import javafx.scene.control.Label;
 
 public class Quarry extends Building {
     public Quarry(String url) {
@@ -8,14 +7,17 @@ public class Quarry extends Building {
     }
 
     @Override
-    public void build(Label cash) {
-        this.cost=500;
-        this.income=200;
-        this.incomePeriod=60;
-        this.time=1;
-        this.cash=cash;
+    public void setCost() {
+        this.cost = 500;
+    }
 
-        payForBuilding();
-        setTimer();
+    @Override
+    public void setIncome() {
+        this.income = 200;
+    }
+
+    @Override
+    public void setIncomeperiod() {
+        this.incomePeriod = 60;
     }
 }

@@ -1,23 +1,26 @@
 package sample.buildings;
 
-import javafx.scene.control.Label;
-
 
 public class Mint extends Building {
     public Mint(String url) {
         super(url);
     }
 
-    @Override
-    public void build( Label cash) {
-        this.cost=10000;
-        this.income=3000;
-        this.incomePeriod=60;
-        this.time=1;
-        this.cash=cash;
 
-        payForBuilding();
-        setTimer();
+    @Override
+    public void setCost() {
+        this.cost = 10000;
     }
+
+    @Override
+    public void setIncome() {
+        this.income = 3000;
+    }
+
+    @Override
+    public void setIncomeperiod() {
+        this.incomePeriod = 60;
+    }
+
 
 }
